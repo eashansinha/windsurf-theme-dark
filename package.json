@@ -1,0 +1,35 @@
+{
+  "name": "windsurf-theme-dark",
+  "displayName": "Windsurf Dark Theme",
+  "description": "A dark theme for VS Code/Windsurf based on the USACognition design system with green accents",
+  "version": "1.0.0",
+  "publisher": "usacognition",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "dark",
+    "windsurf",
+    "usacognition",
+    "green"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Windsurf Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/windsurf-dark-color-theme.json"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/usacognition/windsurf-theme-dark"
+  },
+  "icon": "icon.png"
+}
