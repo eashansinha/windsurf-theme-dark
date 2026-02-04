@@ -24,9 +24,17 @@
     "button.background": "#00ec7e",
     "button.foreground": "#0d0f0d",
     "button.hoverBackground": "#3eed9b",
-    "button.secondaryBackground": "#3d3d3d",
+    "button.secondaryBackground": "#ffffffe5",
     "button.secondaryForeground": "#ffffffe5",
-    "button.secondaryHoverBackground": "#4d4d4d",
+    "button.secondaryHoverBackground": "#777777",
+    "button.border": "#ffffff14",
+    
+    "toggle.border": "#ffffff14",
+    "toggle.background": "#2a2a2a",
+    "toggle.foreground": "#ffffffe5",
+    "toggle.hoverBackground": "#3d3d3d",
+    "toggle.activeBackground": "#1f1f1f",
+    "toggle.activeForeground": "#ffffffe5",
 
     "radio.activeForeground": "#0d0f0d",
     "radio.activeBackground": "#00ec7e",
@@ -35,6 +43,12 @@
     "radio.inactiveBackground": "#3d3d3d",
     "radio.inactiveBorder": "#ffffff14",
     "radio.inactiveHoverBackground": "#4d4d4d",
+
+    "segmentedControl.background": "#ffffff14",
+    "segmentedControl.foreground": "#ffffffe5",
+    "segmentedControl.selectedBackground": "#1f1f1f",
+    "segmentedControl.selectedForeground": "#ffffffe5",
+    "segmentedControl.border": "#ffffff14",
 
     "dropdown.background": "#1f1f1f",
     "dropdown.listBackground": "#1f1f1f",
