@@ -30,6 +30,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/usacognition/windsurf-theme-dark"
-  },
-  "icon": "icon.png"
+  }
 }
