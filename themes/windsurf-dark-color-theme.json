@@ -3,7 +3,7 @@
   "name": "Windsurf Dark",
   "type": "dark",
   "colors": {
-    "focusBorder": "#ffffffff",
+    "focusBorder": "#faf8f6",
     "foreground": "#ffffffe5",
     "disabledForeground": "#ffffff66",
     "widget.border": "#ffffff14",
@@ -110,6 +110,7 @@
     "activityBarBadge.foreground": "#0d0f0d",
     "activityBar.activeBorder": "#faf8f6",
     "activityBar.activeBackground": "#ffffff0d",
+    "activityBarTop.activeBorder": "#faf8f6",
 
     "sideBar.background": "#141414",
     "sideBar.foreground": "#ffffff99",
