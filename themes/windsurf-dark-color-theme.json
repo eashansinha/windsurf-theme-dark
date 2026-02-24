@@ -3,7 +3,7 @@
   "name": "Windsurf Dark",
   "type": "dark",
   "colors": {
-    "focusBorder": "#00000000",
+    "focusBorder": "#ffffffff",
     "foreground": "#ffffffe5",
     "disabledForeground": "#ffffff66",
     "widget.border": "#ffffff14",
