@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-BASE_URL="https://raw.githubusercontent.com/usacognition/windsurf-theme-dark/main"
+BASE_URL="https://raw.githubusercontent.com/eashansinha/windsurf-theme-dark/main"
 EXT_DIR_NAME="usacognition.windsurf-theme-dark-1.0.0"
 
 TARGETS=()
