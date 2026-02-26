@@ -12,6 +12,14 @@ cp -r ~/Desktop/Projects/windsurf-theme-dark ~/.windsurf-insiders/extensions/usa
 
 This removes the old copies first (to avoid permission errors with `.git` objects), then copies the theme to both the Windsurf and Windsurf Insiders extensions folders so changes are reflected in the IDE. The directory must be named `usacognition.windsurf-theme-dark-1.0.0` (publisher.name-version format) to match the installed extension that VS Code reads from.
 
+After making any changes to the theme, rebuild the `.vsix` before pushing:
+
+```bash
+npx @vscode/vsce package --allow-missing-repository
+```
+
+This regenerates `windsurf-theme-dark-1.0.0.vsix` which the install script downloads for team members. Always commit the updated `.vsix` alongside your theme changes.
+
 ## Lessons Learned
 
 - **Extension directory naming matters.** VS Code only reads extensions from directories named `publisher.name-version` (e.g. `usacognition.windsurf-theme-dark-1.0.0`). Copying to a bare name like `windsurf-theme-dark/` creates a directory VS Code ignores entirely — theme file changes will silently have no effect.
