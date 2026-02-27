@@ -621,7 +621,7 @@
     "inlineChat.foreground": "#ffffffe5",
     "inlineChat.shadow": "#00000000",
 
-    "sash.hoverBorder": "#00ec7e"
+    "sash.hoverBorder": "#ffffff66"
   },
   "tokenColors": [
     {
