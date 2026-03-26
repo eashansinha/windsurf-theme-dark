@@ -68,6 +68,7 @@ if [ "$INSTALLED" -eq 0 ]; then
     echo "Warning: could not copy theme into an extensions directory."
     echo "CLI install was attempted but may not have succeeded."
     echo "Try opening your IDE first, then re-run this script."
+    exit 1
   fi
 fi
 
