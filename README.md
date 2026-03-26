@@ -35,6 +35,14 @@ A dark theme for VS Code and Windsurf based on the USACognition design system.
 
 ## Installation
 
+### Quick Install
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/eashansinha/windsurf-theme-dark/main/install.sh | bash
+```
+
+Then restart your IDE and select the theme: `Cmd+K Cmd+T` → **Windsurf Dark**
+
 ### Method 1: Install from VSIX (Local)
 
 1. Package the extension:
