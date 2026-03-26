@@ -3,8 +3,8 @@ set -euo pipefail
 
 VSIX_URL="https://raw.githubusercontent.com/eashansinha/windsurf-theme-dark/main/windsurf-theme-dark-1.1.0.vsix"
 TMPFILE="$(mktemp /tmp/windsurf-theme-dark-XXXXXX.vsix)"
-TMPDIR="$(mktemp -d /tmp/windsurf-theme-dark-extract-XXXXXX)"
-trap 'rm -f "$TMPFILE"; rm -rf "$TMPDIR"' EXIT
+EXTRACT_DIR="$(mktemp -d /tmp/windsurf-theme-dark-extract-XXXXXX)"
+trap 'rm -f "$TMPFILE"; rm -rf "$EXTRACT_DIR"' EXIT
 
 EXT_ID="usacognition.windsurf-theme-dark"
 EXT_VERSION="1.1.0"
@@ -14,12 +14,29 @@ echo "Downloading Windsurf Dark theme..."
 curl -fsSL "$VSIX_URL" -o "$TMPFILE"
 
 echo "Extracting..."
-unzip -qo "$TMPFILE" -d "$TMPDIR"
+unzip -qo "$TMPFILE" -d "$EXTRACT_DIR"
 
-# ── Direct-copy install (primary method) ──────────────────────────
+# ── CLI install (first pass) ──────────────────────────────────────
+# Attempt CLI install to register the extension in the IDE's internal
+# database. This silently fails on some Windsurf builds, so the
+# direct-copy below is the authoritative install step.
+
+IDES=()
+command -v windsurf          >/dev/null 2>&1 && IDES+=("windsurf")
+command -v windsurf-next     >/dev/null 2>&1 && IDES+=("windsurf-next")
+command -v windsurf-insiders >/dev/null 2>&1 && IDES+=("windsurf-insiders")
+command -v code              >/dev/null 2>&1 && IDES+=("code")
+command -v code-insiders     >/dev/null 2>&1 && IDES+=("code-insiders")
+
+for IDE in ${IDES[@]+"${IDES[@]}"}; do
+  echo "  Registering via $IDE CLI..."
+  "$IDE" --install-extension "$TMPFILE" --force 2>/dev/null || true
+done
+
+# ── Direct-copy install (authoritative) ───────────────────────────
 # Copies the extension into each IDE's extensions directory.
-# This is more reliable than CLI --install-extension, which silently
-# fails on some Windsurf builds.
+# This is more reliable than CLI --install-extension and runs last
+# so it is never undone by the CLI step above.
 
 INSTALLED=0
 
@@ -35,26 +52,9 @@ for base in "$HOME/.windsurf" "$HOME/.windsurf-insiders" "$HOME/.windsurf-next" 
   done
 
   target="$ext_root/$EXT_DIR_NAME"
-  cp -R "$TMPDIR/extension" "$target"
+  cp -R "$EXTRACT_DIR/extension" "$target"
   echo "  Installed to $target"
   INSTALLED=1
-done
-
-# ── CLI install (secondary / fallback) ────────────────────────────
-# Attempt CLI install as well; it helps register the extension in the
-# IDE's internal database on versions where it still works.
-
-IDES=()
-command -v windsurf          >/dev/null 2>&1 && IDES+=("windsurf")
-command -v windsurf-next     >/dev/null 2>&1 && IDES+=("windsurf-next")
-command -v windsurf-insiders >/dev/null 2>&1 && IDES+=("windsurf-insiders")
-command -v code              >/dev/null 2>&1 && IDES+=("code")
-command -v code-insiders     >/dev/null 2>&1 && IDES+=("code-insiders")
-
-for IDE in "${IDES[@]}"; do
-  echo "  Registering via $IDE CLI..."
-  "$IDE" --uninstall-extension "$EXT_ID" 2>/dev/null || true
-  "$IDE" --install-extension "$TMPFILE" --force 2>/dev/null || true
 done
 
 if [ "$INSTALLED" -eq 0 ] && [ ${#IDES[@]} -eq 0 ]; then
