@@ -1,7 +1,7 @@
 {
   "name": "windsurf-theme-dark",
   "displayName": "Windsurf Dark Theme",
-  "description": "A dark theme for VS Code/Windsurf based on the USACognition design system with green accents",
+  "description": "A dark theme for VS Code/Windsurf based on the USACognition design system with blue accents",
   "version": "1.0.0",
   "publisher": "usacognition",
   "license": "MIT",
@@ -16,7 +16,7 @@
     "dark",
     "windsurf",
     "usacognition",
-    "green"
+    "blue"
   ],
   "contributes": {
     "themes": [

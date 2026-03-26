@@ -8,6 +8,16 @@ trap 'rm -f "$TMPFILE"' EXIT
 echo "Downloading theme..."
 curl -fsSL "$VSIX_URL" -o "$TMPFILE"
 
+EXT_NAME="usacognition.windsurf-theme-dark-1.0.0"
+
+# Remove old extension directories so same-version updates take effect
+for DIR in "$HOME/.windsurf/extensions" "$HOME/.windsurf-insiders/extensions" "$HOME/.windsurf-next/extensions" "$HOME/.vscode/extensions" "$HOME/.vscode-insiders/extensions"; do
+  if [ -d "$DIR/$EXT_NAME" ]; then
+    echo "Removing old extension from $DIR..."
+    rm -rf "$DIR/$EXT_NAME"
+  fi
+done
+
 IDES=()
 command -v windsurf >/dev/null 2>&1 && IDES+=("windsurf")
 command -v windsurf-insiders >/dev/null 2>&1 && IDES+=("windsurf-insiders")
