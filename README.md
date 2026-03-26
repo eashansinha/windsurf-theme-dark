@@ -7,7 +7,8 @@ A dark theme for VS Code and Windsurf based on the USACognition design system.
 ## Features
 
 - **Dark background** with `#141414` base color
-- **Green accent** (`#00ec7e`) for highlights, strings, and success states
+- **Blue accent** (`#4489FF`) for highlights, buttons, and UI accent elements
+- **Green** (`#00ec7e`) for success states, git added, and terminal
 - **Warm cream accent** (`#faf8f6`) for primary UI elements (buttons, badges, cursors)
 - **Semantic color coding**:
   - Red (`#f53b3a`) for keywords, errors, and deletions
@@ -25,8 +26,8 @@ A dark theme for VS Code and Windsurf based on the USACognition design system.
 | `text-primary` | `#ffffffe5` | Primary text |
 | `text-secondary` | `#ffffff99` | Secondary text |
 | `text-tertiary` | `#ffffff66` | Comments, disabled |
-| `accent-primary` | `#faf8f6` | Buttons, badges, cursor |
-| `text-green` | `#00ec7e` | Strings, success |
+| `accent-primary` | `#4489FF` | Buttons, highlights, accent |
+| `text-green` | `#00ec7e` | Success, git added |
 | `text-red` | `#f53b3a` | Keywords, errors |
 | `text-orange` | `#f58e3a` | Classes, warnings |
 | `text-purple` | `#956cde` | Functions, constants |
