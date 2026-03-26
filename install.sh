@@ -57,11 +57,18 @@ for base in "$HOME/.windsurf" "$HOME/.windsurf-insiders" "$HOME/.windsurf-next" 
   INSTALLED=1
 done
 
-if [ "$INSTALLED" -eq 0 ] && [ ${#IDES[@]} -eq 0 ]; then
-  echo ""
-  echo "No Windsurf or VS Code installation detected."
-  echo "Install Windsurf or VS Code first, then re-run this script."
-  exit 1
+if [ "$INSTALLED" -eq 0 ]; then
+  if [ ${#IDES[@]} -eq 0 ]; then
+    echo ""
+    echo "No Windsurf or VS Code installation detected."
+    echo "Install Windsurf or VS Code first, then re-run this script."
+    exit 1
+  else
+    echo ""
+    echo "Warning: could not copy theme into an extensions directory."
+    echo "CLI install was attempted but may not have succeeded."
+    echo "Try opening your IDE first, then re-run this script."
+  fi
 fi
 
 echo ""
