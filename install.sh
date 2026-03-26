@@ -21,6 +21,8 @@ if [ ${#IDES[@]} -eq 0 ]; then
 fi
 
 for IDE in "${IDES[@]}"; do
+  echo "Uninstalling old version via $IDE..."
+  "$IDE" --uninstall-extension usacognition.windsurf-theme-dark 2>&1 || true
   echo "Installing via $IDE..."
   "$IDE" --install-extension "$TMPFILE" --force 2>&1
 done
