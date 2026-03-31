@@ -9,3 +9,4 @@ install.sh
 *.vsix
 *.code-workspace
 AGENTS.md
+2026-dark-base.json

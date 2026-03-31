@@ -9,7 +9,7 @@ A dark theme for VS Code and Windsurf based on the USACognition design system.
 - **Dark background** with `#141414` base color
 - **Blue accent** (`#4489FF`) for highlights, buttons, and UI accent elements
 - **Green** (`#00ec7e`) for success states, git added, and terminal
-- **Warm cream accent** (`#faf8f6`) for primary UI elements (buttons, badges, cursors)
+- **Blue accent highlights** (`#4489FF`) for active tab bars, Cascade tabs, and activity bar indicators
 - **Semantic color coding**:
   - Red (`#f53b3a`) for keywords, errors, and deletions
   - Orange (`#f58e3a`) for classes, types, and warnings
@@ -23,9 +23,10 @@ A dark theme for VS Code and Windsurf based on the USACognition design system.
 | `bg-page` | `#141414` | Editor background |
 | `bg-wash` | `#181a19` | Secondary backgrounds |
 | `bg-elevated` | `#1f1f1f` | Widgets, dropdowns |
-| `text-primary` | `#ffffffe5` | Primary text |
-| `text-secondary` | `#ffffff99` | Secondary text |
-| `text-tertiary` | `#ffffff66` | Comments, disabled |
+| `text-strong` | `#ffffffcc` | Titles, active tabs, headers |
+| `text-primary` | `#ffffffb3` | Primary body text, editor |
+| `text-secondary` | `#ffffff80` | Sidebar, descriptions, status bar |
+| `text-disabled` | `#ffffff66` | Comments, line numbers, disabled |
 | `accent-primary` | `#4489FF` | Buttons, highlights, accent |
 | `text-green` | `#00ec7e` | Success, git added |
 | `text-red` | `#f53b3a` | Keywords, errors |
@@ -108,6 +109,11 @@ You can further customize the theme in your `settings.json`:
   }
 }
 ```
+
+## Reference Files
+
+- **`2026-dark-base.json`** — VS Code's experimental "Dark Modern" theme from February 2026, included as a reference for contrast and brightness comparisons. This file is **not** part of the extension; it is only used for development reference.
+- **`themes/windsurf-dark-color-theme.json`** — The actual Windsurf Dark theme file.
 
 ## License
 
